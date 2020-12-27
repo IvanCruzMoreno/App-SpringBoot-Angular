@@ -53,7 +53,7 @@ public class ClienteServiceImpl implements IClienteService{
 		currentCliente.setApellido(cliente.getApellido());
 		currentCliente.setNombre(cliente.getNombre());
 		currentCliente.setEmail(cliente.getEmail());
-		
+		currentCliente.setFecha(cliente.getFecha());
 		return currentCliente;
 	}
 
