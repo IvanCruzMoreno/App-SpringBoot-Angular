@@ -31,6 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.badbadcode.application.model.entity.Cliente;
+import com.badbadcode.application.model.entity.Region;
 import com.badbadcode.application.model.services.IClienteService;
 import com.badbadcode.application.model.services.IUploadFileService;
 
@@ -195,7 +196,11 @@ public class ClienteRestController {
 		cabecera.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\""+ recurso.getFilename() + "\"");
 		
 		return new ResponseEntity<Resource>(recurso, cabecera, HttpStatus.OK);
-	}	
+	}
+	@GetMapping("/clientes/regiones")
+	public List<Region> listarRegiones(){
+		return clienteService.findAllRegiones();
+	}
 	
 }
 

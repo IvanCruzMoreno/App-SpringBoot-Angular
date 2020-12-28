@@ -1,6 +1,8 @@
 package com.badbadcode.application.model.services;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.badbadcode.application.model.dao.IClienteDao;
 import com.badbadcode.application.model.entity.Cliente;
+import com.badbadcode.application.model.entity.Region;
 
 @Service
 public class ClienteServiceImpl implements IClienteService{
@@ -54,7 +57,13 @@ public class ClienteServiceImpl implements IClienteService{
 		currentCliente.setNombre(cliente.getNombre());
 		currentCliente.setEmail(cliente.getEmail());
 		currentCliente.setFecha(cliente.getFecha());
+		currentCliente.setRegion(cliente.getRegion());
 		return currentCliente;
+	}
+
+	@Override
+	public List<Region> findAllRegiones() {
+		return clienteDao.findAllRegiones();
 	}
 
 	
