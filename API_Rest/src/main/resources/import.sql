@@ -13,3 +13,14 @@ insert into clientes (id_region, nombre,apellido,email,fecha) values(4, 'bolt','
 insert into clientes (id_region, nombre,apellido,email,fecha) values(4, 'rocke','blanco','rockeblanco@sinbad.com','2020-11-08');
 insert into clientes (id_region, nombre,apellido,email,fecha) values(1, 'emma','mireya','emma@sinbad.com','2020-06-03');
 insert into clientes (id_region, nombre,apellido,email,fecha) values(1, 'marce','marcela','marcela@sinbad.com','2020-09-03');
+
+
+insert into usuarios (username, password, enabled, nombre, apellido, email) values ('ivan', '$2a$10$U13rCJ/YRndta.7ASIhwS.yqT4KXKemSm7CK7O8skJrTYyRtrE7Hq', 1, 'carlos', 'moreno', 'ivansinbad@gmail.com');
+insert into usuarios (username, password, enabled, nombre, apellido, email) values ('admin', '$2a$10$fSzqQcXQqZ3IbdGCERLwLukhuM8woO7w.ZhmHylA/NrnAceJDHJjO', 1, 'john', 'doe', 'johndoe@gmail.com');
+
+insert into roles (nombre) values ('ROLE_USER');
+insert into roles (nombre) values ('ROLE_ADMIN');
+
+insert into administracion (id_user, id_role) values (1, 1);
+insert into administracion (id_user, id_role) values (2, 2);
+insert into administracion (id_user, id_role) values (2, 1);
